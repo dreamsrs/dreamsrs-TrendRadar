@@ -432,24 +432,24 @@ custom:
 
     deep_quiet:
       name: "深夜静默"
-      start: "23:00"
-      end: "07:00"                 # 23:00 → 次日 06:00（跨日时间段）
+      start: "00:00"
+      end: "08:00"                 # 23:00 → 次日 06:00（跨日时间段）
       collect: true                # 夜间继续采集数据
       analyze: true                # 夜间可以跑 AI 分析（反正不推送）
       push: false                  # 深夜不推送，避免打扰
 
     weekday_morning:
       name: "工作日早间"
-      start: "09:00"
-      end: "11:00"                 # 跨度 2h，留足触发裕量
+      start: "11:00"
+      end: "13:00"                 # 跨度 2h，留足触发裕量
       push: true                   # 早上推送一次
       report_mode: "incremental"   # 只推新增内容
       # once 继承 default（push: true）→ 窗口内只推一次
 
     weekend_morning:
       name: "周末早间"
-      start: "10:00"
-      end: "12:00"                 # 跨度 2h
+      start: "11:00"
+      end: "13:00"                 # 跨度 2h
       push: true
       report_mode: "daily"         # 周末看全天汇总
       # once 继承 default（push: true）→ 窗口内只推一次
@@ -457,7 +457,7 @@ custom:
     evening_summary:
       name: "晚间汇总"
       start: "21:00"
-      end: "22:00"
+      end: "23:00"
       analyze: true                # 晚间做 AI 分析
       ai_mode: "daily"             # AI 也分析全天内容
       push: true                   # 晚间推送
